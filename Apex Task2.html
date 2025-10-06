@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apex Task-2</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #edf6f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 20px;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    header {
+      text-align: center;
+      background-color: #770800;
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #772400;
+    }
+
+    .form-section, .todo-section {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    input, textarea {
+      padding: 10px;
+      margin: 5px 0;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #c59283;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background-color: #771400;
+      color: white;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: 5px;
+    }
+
+    ul#taskList {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul#taskList li {
+      padding: 10px;
+      margin: 5px 0;
+      background-color: #e0fbfc;
+      border-radius: 5px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    ul#taskList li.completed {
+      text-decoration: line-through;
+      background-color: #c2e6e4;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+
+      input, button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Interactive Web Page with Forms & To-Do List</h2>
+    <header>
+      <h1>Login Form</h1>
+    </header>
+
+    <!-- Contact Form -->
+    <section class="form-section">
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Name" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Enter your password" required>
+        <button type="submit">Submit</button>
+        <p id="formError" class="error"></p>
+      </form>
+    </section>
+
+    <!-- To-Do List -->
+    <section class="todo-section">
+      <h2>Dynamic To-Do List</h2>
+      <input type="text" id="taskInput" placeholder="Enter task">
+      <button onclick="addTask()">Add Task</button>
+      <ul id="taskList"></ul>
+    </section>
+  </div>
+
+  <script>
+
+    // Form Validation
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      const email = document.getElementById("email").value;
+      const error = document.getElementById("formError");
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailPattern.test(email)) {
+        e.preventDefault();
+        error.textContent = "Please enter a valid email address.";
+      } else {
+        error.textContent = "";
+        alert("Form submitted successfully!");
+      }
+    });
+
+    // Dynamic To-Do List
+    function addTask() {
+      const taskInput = document.getElementById("taskInput");
+      const taskList = document.getElementById("taskList");
+
+      if (taskInput.value.trim() !== "") {
+        const li = document.createElement("li");
+        li.textContent = taskInput.value;
+
+        li.addEventListener("click", () => {
+          li.classList.toggle("completed");
+        });
+
+        li.addEventListener("dblclick", () => {
+          li.remove();
+        });
+
+        taskList.appendChild(li);
+        taskInput.value = "";
+      }
+    }
+  </script>
+</body>
+</html>

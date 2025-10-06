@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1">
+        <title>Orange Photography</title>
+   <style>
+    /* Styling for body section*/
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    /* Style for head section*/
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background-color: rgb(242, 245, 248);
+        border-bottom: 2px solid rgb(26, 28, 4);
+        position: relative;
+    }
+    /* style for logo section*/
+    .logo {
+        position: absolute;
+        left: 20px;
+
+    }
+    
+    .logo img {
+        max-height: 50px;
+    }
+    /* style for company name section*/
+    .company-name {
+        font-size: 28px;
+        font-weight: bold;
+        color: orange;
+
+    }
+    /* style for nav links*/
+    nav {
+        background-color: lightskyblue;
+        text-align: center;
+        padding: 9px 0;
+    }
+    nav a{
+        color: #ffffff;
+        text-decoration: none;
+        margin: 0 20px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+    }
+    /* applying hover effect for the nav links*/
+    nav a:hover{
+        color: black;
+        text-decoration: underline;
+    }
+    section {
+        padding:  25px;
+        margin: 20px auto;
+        max-width: 900px;
+        box-shadow: 0 6px 18px rgb(69, 81, 212);
+        transition: box-shadow 0.3s ease;
+
+    }
+    section:hover {
+        box-shadow: 0 6px 18px rgba(250, 252, 136, 0.856) ;
+    }
+    /* style for about section*/
+    #About {
+        background-color: orange;
+        padding: 40px;
+        color: #000;
+    }
+    #ContactUs{
+        background-color: orange ;
+    }
+    /*style for footer section */
+    .footer {
+        background-color: #ffffff;
+        text-align: center;
+        padding: 15px;
+        font-size: 14px;
+        color: #333;
+    }
+   </style>     
+    </head>
+    <body>
+        <!--This is logo section -->
+        <div class="header">
+            <div class="logo">
+                <img src="https://as1.ftcdn.net/jpg/05/18/15/00/1000_F_518150023_h1Q6a3nzruE5e1mc3fnkLZYsCcSOEV4I.jpg" alt="Orangephotographylogo">
+
+            </div>
+            <div class="company-name">
+                Orange Photography
+            </div>
+        </div>
+        <!-- this is nav section-->
+         <nav>
+            <a href="#Home">Home</a>  |
+            <a href="#About">About</a> |
+            <a href="#Shoot Packages">Shoot Packages</a> |
+            <a href="#Contactus">Contact Us</a>
+         </nav>
+         <!-- this is home section -->
+          <section id="Home">
+            <h4>Orange Photography</h4>
+            <p>Orange Photography where creativity meets precision. Let’s create something unforgettable together.</p>
+
+          </section>
+          <!--this is about section-->
+          <section id="About">
+            <h2>About</h2>
+            <p>Welcome to Orange Photography , where creativity meets precision. Founded with a passion for capturing life's most memorable moments, we specialize in delivering stunning, high-quality images that tell a story. Whether it's portraits, events, or artistic compositions, we bring a fresh perspective and technical expertise to every shot. At Orange Photography Studios, we believe that every picture should evoke emotion and leave a lasting impression.</p>
+          
+          </section>
+        <!--this is package section-->
+        <section id="Shoot Packages">
+            <h2>Packages</h2>
+            <p>Pre Book the Slot</p>
+            <h5>Pre wedding & wedding Shoot:<input type="button" onclick="showAlert1()" value="Slot Book"></h5>
+            <h5>Fashion Photo Shoot:<input type="button" onclick="showAlert1()" value="Slot Book"></h5>
+            <h5>Maternity & Newborn shoot:<input type="button" onclick="showAlert1()" value="Slot Book"></h5>
+            <h5>Natural & Wildlife Photography:<input type="button" onclick="showAlert1()" value="Slot Book"></h5>
+            <input type="button" onclick="showAlert1()" value="View more info">
+        </section>
+        <!-- this is contact section-->
+         <section id="ContactUs">
+            <center>
+                <form>
+                Enter your Name:<input type="text"><br><br>
+                Enter your Number:<input type="text"><br><br>
+                Enter Slot Date:<input type="number"><br><br>
+                <input type="button" onclick="showAlert1()" value="submit">
+                </form>
+            </center>
+         </section>
+          <!-- this is footer section -->
+      <footer class="footer">
+        &copy; 2025 Orangephotography . All rights reserved.
+      </footer>
+      <script>
+        // js code for submit button
+        function showAlert() {
+        alert("Succesfully submitted your details..!!");
+      }
+      // js code for apply button
+      function showAlert1() {
+        alert("You are successfully Booked a Slot..!!");
+      }
+      // js code for view more button
+      function showAlert2() {
+        alert("To know more ,visit our official page..!!");
+      }
+      </script>
+    </body>
+</html>
